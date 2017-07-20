@@ -10,6 +10,6 @@ class Administrator extends Model
     protected $fillable=['Rut','Nombre','Local'];
 
    public function roles(){
-   	return $this->hasMany('App\Role');
+   	  return $this->hasMany('App\Role');
    }
 }
