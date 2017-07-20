@@ -13,7 +13,8 @@ class CreateAdministratorsTable extends Migration
     public function up()
     {
         Schema::create('administrators', function (Blueprint $table) {
-             $table->string('rut')->primary();
+            $table->increments('id');
+             $table->string('rut');
             $table->string('nombre');
             $table->string('local');
             $table->timestamps();
