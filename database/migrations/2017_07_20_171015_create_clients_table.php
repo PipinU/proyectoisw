@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCoffeesTable extends Migration
+class CreateClientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,10 @@ class CreateCoffeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('coffees', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('clients', function (Blueprint $table) {
+             $table->increments('id');
+            $table->string('rut')->unique();
             $table->string('nombre');
-            $table->integer('precio');
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateCoffeesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('coffees');
+        Schema::drop('clients');
     }
 }

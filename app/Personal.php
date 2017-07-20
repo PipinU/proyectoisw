@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Personal extends Model
 {
-      protected $table= "personals";
+     protected $table= "personals";
        protected $fillable=['Rut','Nombre','id_role'];
 
        public function orders(){

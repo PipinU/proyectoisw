@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonalsTable extends Migration
+class CreateIngredientsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreatePersonalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('personals', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('ingredients', function (Blueprint $table) {
+               $table->increments('id');
             $table->string('nombre');
-            $table->integer('id_role')->unsigned();
-            $table->foreign('id_role')->references('id')->on('id_roles')->onDelete('cascade');
+            $table->integer('cantidad');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreatePersonalsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('personals');
+        Schema::drop('ingredients');
     }
 }

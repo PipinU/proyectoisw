@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdministratorsTable extends Migration
+class CreatePersonalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateAdministratorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrators', function (Blueprint $table) {
-     
-            $table->string('rut')->primary();
+        Schema::create('personals', function (Blueprint $table) {
+           $table->increments('id');
             $table->string('nombre');
-            $table->string('local');
+            $table->integer('id_role')->unsigned();
+            $table->foreign('id_role')->references('id')->on('id_roles')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateAdministratorsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('administrators');
+        Schema::drop('personals');
     }
 }

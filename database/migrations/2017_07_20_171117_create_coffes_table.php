@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRecordsTable extends Migration
+class CreateCoffesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,10 @@ class CreateRecordsTable extends Migration
      */
     public function up()
     {
-        Schema::create('records', function (Blueprint $table) {
+        Schema::create('coffes', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('descripcion');
-            $table->integer('id_order')->unsigned();
-            $table->foreign('id_order')->references('id')->on('orders')->onDelete('cascade');
+            $table->string('nombre');
+            $table->integer('precio');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateRecordsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('records');
+        Schema::drop('coffes');
     }
 }

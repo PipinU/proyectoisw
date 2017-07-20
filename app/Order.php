@@ -21,6 +21,4 @@ class Order extends Model
     public function records(){
         return $this->hasMany('App\Record','id_record');
     }
-
-   
 }
