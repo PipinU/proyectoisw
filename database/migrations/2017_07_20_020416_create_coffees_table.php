@@ -15,7 +15,7 @@ class CreateCoffeesTable extends Migration
         Schema::create('coffees', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
-            $table->money('precio');
+            $table->integer('precio');
             $table->timestamps();
         });
     }
