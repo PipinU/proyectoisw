@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('descripcion');
             $table->foreign('id_coffe')->references('id')->on('coffes');
             $table->foreign('id_client')->references('id')->on('clients');
-            $table->foreign('id_personal')->references->on('personals');
+            $table->foreign('id_personal')->references('id')->on('personals');
             $table->timestamps();
         });
     }
