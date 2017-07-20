@@ -16,7 +16,7 @@ class CreateRecordsTable extends Migration
             $table->increments('id');
             $table->text('descripcion');
             $table->integer('id_order')->unsigned();
-            $table->foreign('id_order')->references('id')->on('order')->onDelete('cascade');
+            $table->foreign('id_order')->references('id')->on('orders')->onDelete('cascade');
             $table->timestamps();
         });
     }
