@@ -16,7 +16,7 @@ class CreateRolesTable extends Migration
               $table->increments('id');
             $table->string('nombre');
             $table->integer('id_administrator')->unsigned();
-            $table->foreign('id_administrator')->references('id')->on('administrators')->onDelete('cascade');
+            $table->foreign('id_administrator')->references('id')->on('administrators');
             $table->timestamps();
         });
     }
