@@ -16,7 +16,7 @@ class CreatePersonalsTable extends Migration
            $table->increments('id');
             $table->string('nombre');
             $table->integer('id_role')->unsigned();
-            $table->foreign('id_role')->references('id')->on('id_roles')->onDelete('cascade');
+            $table->foreign('id_role')->references('id')->on('roles');
             $table->timestamps();
         });
     }

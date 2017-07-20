@@ -21,9 +21,9 @@ class CreateOrdersTable extends Migration
             $table->time('hora');
             $table->date('fecha');
             $table->text('descripcion');
-            $table->foreign('id_coffe')->references('id')->on('coffes')->onDelete('cascade');
-            $table->foreign('id_client')->references('id')->on('clients')->onDelete('cascade');
-            $table->foreign('id_personal')->references->on('personals')->onDelete('cascade');
+            $table->foreign('id_coffe')->references('id')->on('coffes');
+            $table->foreign('id_client')->references('id')->on('clients');
+            $table->foreign('id_personal')->references->on('personals');
             $table->timestamps();
         });
     }
