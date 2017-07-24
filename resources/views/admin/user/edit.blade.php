@@ -38,14 +38,14 @@
 
          <div class="form-group">
         
-            {!! Form::label('user','editar usuario') !!}
-            {!!Form::text('user',$user->usuario,['class'=>'form-control','placeholder'=>'usuario','required'])!!}  
+            {!! Form::label('username','editar usuario') !!}
+            {!!Form::text('username',$user->usuario,['class'=>'form-control','placeholder'=>'Usuario','required'])!!}  
             
         </div>
         <div class="form-group">
         
             {!! Form::label('password','editar contraseña') !!}
-            {!!Form::text('password',$user->Contrasena,['class'=>'form-control','placeholder'=>'contraseña','required'])!!}  
+            {!!Form::text('password',$user->Contrasena,['class'=>'form-control','placeholder'=>'Contraseña','required'])!!}  
             
         </div>
 
