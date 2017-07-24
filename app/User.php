@@ -1,12 +1,15 @@
 <?php
 
 namespace App;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Model  implements AuthenticatableContract {
+    use Authenticatable;
     protected $table="users";
+
 
     protected $fillable = [
         'name','phone','address','rol','username','password'

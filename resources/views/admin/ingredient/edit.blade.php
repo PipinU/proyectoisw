@@ -1,32 +1,40 @@
-@extends('template/logued') @section('title','Editar Ingrediente' . $ingredient->name) @section('content')
+@extends('template/logued')
 
-<div class="row">
-    <div class="col-sm-6">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-sm-12" align="center">
-                        <div class="page-header">
-                            <h1><small>Editar Ingrediente</small></h1>
-                        </div>                        
-                                            
-                        <form method="put" action="{{ route('admin.ingredient.update',$ingredient->id) }}" >
-                            <input value="{{ $ingredient->name }}" name="name" type="text" class="form-control" placeholder="Nombre">
-                            <br>
-                            <input value="{{ $ingredient->amount }}" name="amount" type="text" class="form-control" placeholder="Monto">
-                            <br>
-                            <input value="{{ $ingredient->expiration }}" name="expiration" type="text" class="form-control" placeholder="Fecha de Expiracion">
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-ingredient"></i></span>
-                               </div>
-                            <br>
-                            <button class="btn btn-warning" type="submit">Editar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+@section('title','Editar Ingrediente')
+@section('content')
+    {!! Form :: open(['route'=>['admin.ingredient.update',$ingredient],'method'=>'PUT'])!!}
+
+
+        
+    
+
+        <div class="form-group">
+        
+            {!! Form::label('name','Editar Nombre') !!}
+            {!!Form::text('name',$ingredient->Nombre,['class'=>'form-control','placeholder'=>'Nombre ','required'])!!} 
+            
         </div>
-    </div>
-</div>
+
+
+        <div class="form-group">
+        
+            {!! Form::label('amount','Editar Cantidad') !!}
+            {!!Form::text('amount',$ingredient->Cantidad,['class'=>'form-control','placeholder'=>'Cantidad ','required'])!!}   
+            
+        </div>
+           
+        <div class="form-group">
+        
+            {!! Form::label('expiration','Editar Fecha') !!}
+            {!!Form::text('expiration',$ingredient->Fecha,['class'=>'form-control','placeholder'=>'Fecha ','required'])!!}   
+            
+        </div>
+        
+        <div class="form-group">
+        
+            {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+            <a href="{{route('admin.ingredient.index') }} " class="btn btn-primary" role="button">Cancelar</a>
+            
+        </div>
+    {!!Form::close()!!}
 @endsection

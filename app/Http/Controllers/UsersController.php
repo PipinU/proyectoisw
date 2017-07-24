@@ -21,6 +21,7 @@ class UsersController extends Controller
     public function store(Request $req){
         $user=new User();
         $user->fill($req->all());
+        $user->password=bcrypt($req->password);
         $user->save();
         flash('El usuario ha sido creado correctamente!')->success();
         $users=User::paginate(5);

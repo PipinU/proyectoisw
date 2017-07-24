@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -38,8 +39,9 @@ Route::group(['prefix'=>'admin'],function(){
             'as'=>'admin.ingredient.destroy'
             ]);
 });
+Route::get('login', 'Auth\AuthController@getLogin')->name('login');
+Route::post('login', 'Auth\AuthController@postLogin')->name('login');
+Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 
 
-Route::group(['middleware' => ['web']], function () {
-    //
-});
+Route::get('/home', 'HomeController@index');

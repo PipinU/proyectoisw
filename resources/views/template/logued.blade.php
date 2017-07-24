@@ -19,13 +19,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Caffè Dolce Vita</a>
+                <a class="navbar-brand" href=" {{ url('/') }} ">Caffè Dolce Vita</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <button type="button" class="btn btn-default navbar-btn">Cerrar Sesión</button>
+                    <a class="btn btn-default navbar-btn" href="{{ url('/logout') }}">Cerrar Sesión</a>
                 </ul>
             </div>
         </div>
