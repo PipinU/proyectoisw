@@ -38,8 +38,8 @@
             <!-- Inicio Lista -->
             <div class="col-sm-3">
                 <div class="list-group">
-                    <a href="{{ route('admin.user.index') }}" class="list-group-item">Gestionar Usuario</a>
-                    <a href="{{ route('admin.product.index') }}" class="list-group-item">Gestionar Producto</a>
+                    <a href="{{ route('cajero.product_order.index') }}" class="list-group-item">Detalle Pedido</a>
+                    
                 </div>
             </div>
             <!-- Fin Lista -->

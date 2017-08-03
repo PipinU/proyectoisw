@@ -24,7 +24,8 @@ class User extends Model  implements AuthenticatableContract {
         'password', 'remember_token',
     ];
     
-    public function ingredients(){
-        return $this->hasMany('App\Ingredient');
+    
+    public function orders(){
+        return $this->hasMany('App\Order');
     }
 }

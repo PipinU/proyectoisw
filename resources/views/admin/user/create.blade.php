@@ -20,8 +20,9 @@
                             <input name="address" type="text" class="form-control" placeholder="Direccion">
                             <br>
                             <select name="rol" class="form-control">
-                                <option value="">Seleccione un Rol...</option>
-                                <option value="Administrador">Administrador</option>
+                          
+                                <option value=" ">Seleccione un Rol...</option>
+                                <option value="Administrador" >Administrador</option>
                                 <option value="Mesero">Mesero</option>
                                 <option value="Cajero">Cajero</option>
                             </select>
@@ -36,7 +37,13 @@
                                 <input name="password" type="password" class="form-control" placeholder="Contraseña">
                             </div>
                             <br>
-                            <button class="btn btn-default" type="submit">Registrar</button>
+                            <div class="form-group">
+        
+            {!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
+            <a href="{{route('admin.user.index') }} " class="btn btn-primary" role="button">Cancelar</a>
+            
+        </div>
+                           
                         </form>
                     </div>
                 </div>

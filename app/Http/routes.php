@@ -12,9 +12,6 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
 Route::group(['prefix'=>'admin'],function(){    
@@ -33,13 +30,41 @@ Route::group(['prefix'=>'admin'],function(){
     ]); 
 
 
-    Route::resource('ingredient','IngredientsController');
+    Route::resource('product','ProductsController');
         Route::get('user/{id}/destroy',[
-            'uses'=> 'IngredientsController@destroy',
-            'as'=>'admin.ingredient.destroy'
+            'uses'=> 'ProductsController@destroy',
+            'as'=>'admin.product.destroy'
             ]);
+        
+   });
+//-------Ruta Cajero---------
+Route::group(['prefix'=>'cajero'],function(){
+    Route::get('/',function(){
+        return view('cajero.index');
+    });
+    Route::resource('order','OrdersController');
+    Route::get('order/{id}/destroy',[
+        'uses' => 'OrdersController@destroy',
+        'as' => 'cajero.order.destroy'
+        ]);
+
+Route::resource('product_order','ProductOrderController');
+    Route::get('product_order/{order_id}/{product_id}/destroy',[
+        'uses'=>'ProductOrderController@destroy',
+        'as'=>'cajero.product_order.destroy'
+    ]); 
+
+
+
+
+
 });
-Route::get('login', 'Auth\AuthController@getLogin')->name('login');
+
+
+
+
+
+Route::get('/', 'Auth\AuthController@getLogin')->name('login');
 Route::post('login', 'Auth\AuthController@postLogin')->name('login');
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout');
 

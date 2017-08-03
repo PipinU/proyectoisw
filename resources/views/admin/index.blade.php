@@ -7,7 +7,7 @@
 
     <div class="panel panel-default">
         <div class="panel-body">
-            <h1>Bienvenido </h1>
+            <h1>Bienvenido</h1>
         </div>
     </div>   
 
